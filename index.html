@@ -132,30 +132,6 @@
             margin-right: 10px;
         }
 
-        .contact {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px solid #e9ecef;
-        }
-
-        .contact p {
-            color: #888;
-            font-size: 0.9rem;
-            margin: 10px 0;
-        }
-
-        .contact a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .contact a:hover {
-            color: #764ba2;
-            text-decoration: underline;
-        }
-
         .countdown {
             margin-top: 30px;
             font-size: 1.5rem;
@@ -234,16 +210,8 @@
         </div>
 
         <ul class="info-list" id="info-list">
-            <li><strong id="info-maintenance">维护时间：</strong><span id="maintenance-time">预计 2-4 小时</span></li>
             <li><strong id="info-status">维护状态：</strong><span id="status">进行中</span></li>
         </ul>
-
-        <div class="contact">
-            <p id="contact-text">如有紧急问题，请联系客服</p>
-            <p>
-                <a href="mailto:support@ccbet.com" id="contact-email">support@ccbet.com</a>
-            </p>
-        </div>
     </div>
 
     <script>
@@ -253,24 +221,16 @@
                 subtitle: '我们正在对系统进行升级维护，以提供更好的服务体验',
                 messageTitle: '维护说明',
                 messageContent: '为了给您提供更优质的服务，我们正在进行系统维护升级。在此期间，部分功能可能暂时无法使用，给您带来的不便，敬请谅解。',
-                infoMaintenance: '维护时间：',
-                maintenanceTime: '预计 2-4 小时',
                 infoStatus: '维护状态：',
-                status: '进行中',
-                contactText: '如有紧急问题，请联系客服',
-                contactEmail: 'support@example.com'
+                status: '进行中'
             },
             en: {
                 title: 'System Maintenance',
                 subtitle: 'We are currently performing system upgrades to provide you with a better service experience',
                 messageTitle: 'Maintenance Notice',
                 messageContent: 'We are performing system maintenance and upgrades to provide you with better service. Some features may be temporarily unavailable during this time. We apologize for any inconvenience.',
-                infoMaintenance: 'Maintenance Time:',
-                maintenanceTime: 'Estimated 2-4 hours',
                 infoStatus: 'Status:',
-                status: 'In Progress',
-                contactText: 'For urgent issues, please contact customer service',
-                contactEmail: 'support@example.com'
+                status: 'In Progress'
             }
         };
 
@@ -289,13 +249,8 @@
             document.getElementById('subtitle').textContent = t.subtitle;
             document.getElementById('message-title').textContent = t.messageTitle;
             document.getElementById('message-content').textContent = t.messageContent;
-            document.getElementById('info-maintenance').textContent = t.infoMaintenance;
-            document.getElementById('maintenance-time').textContent = t.maintenanceTime;
             document.getElementById('info-status').textContent = t.infoStatus;
             document.getElementById('status').textContent = t.status;
-            document.getElementById('contact-text').textContent = t.contactText;
-            document.getElementById('contact-email').textContent = t.contactEmail;
-            document.getElementById('contact-email').href = 'mailto:' + t.contactEmail;
         }
 
         function updateButtons() {

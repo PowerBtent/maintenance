@@ -15,23 +15,26 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: radial-gradient(circle at 20% 20%, rgba(103, 80, 164, 0.2), transparent 25%),
+                        radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.2), transparent 30%),
+                        linear-gradient(135deg, #0b1220 0%, #0f172a 50%, #0b1220 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            color: #333;
+            color: #e5e7eb;
         }
 
         .maintenance-container {
-            background: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(160deg, rgba(16, 24, 40, 0.85), rgba(10, 12, 22, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 20px;
             padding: 60px 40px;
-            max-width: 600px;
+            max-width: 620px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.04);
             animation: fadeIn 0.6s ease-in;
         }
 
@@ -67,13 +70,13 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: #667eea;
+            color: #a5b4fc;
             font-weight: 700;
         }
 
         .subtitle {
             font-size: 1.2rem;
-            color: #666;
+            color: #cbd5e1;
             margin-bottom: 30px;
             line-height: 1.6;
         }
@@ -82,6 +85,7 @@
             font-size: 4rem;
             margin: 30px 0;
             animation: rotate 3s linear infinite;
+            color: #93c5fd;
         }
 
         @keyframes rotate {
@@ -94,19 +98,20 @@
         }
 
         .message {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
+            background: rgba(255, 255, 255, 0.04);
+            border-left: 4px solid #6366f1;
             padding: 20px;
             margin: 30px 0;
             border-radius: 8px;
             text-align: left;
             line-height: 1.8;
-            color: #555;
+            color: #cbd5e1;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
         }
 
         .message-title {
             font-weight: 600;
-            color: #667eea;
+            color: #a5b4fc;
             margin-bottom: 10px;
             font-size: 1.1rem;
         }
@@ -119,8 +124,8 @@
 
         .info-list li {
             padding: 10px 0;
-            border-bottom: 1px solid #e9ecef;
-            color: #666;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            color: #cbd5e1;
         }
 
         .info-list li:last-child {
@@ -128,7 +133,7 @@
         }
 
         .info-list li strong {
-            color: #667eea;
+            color: #a5b4fc;
             margin-right: 10px;
         }
 
@@ -157,111 +162,28 @@
             }
         }
 
-        .language-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .language-toggle button {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid #667eea;
-            color: #667eea;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .language-toggle button:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .language-toggle button.active {
-            background: #667eea;
-            color: white;
-        }
     </style>
 </head>
 <body>
-    <div class="language-toggle">
-        <button onclick="switchLanguage('zh')" id="btn-zh" class="active">中文</button>
-        <button onclick="switchLanguage('en')" id="btn-en">English</button>
-    </div>
-
     <div class="maintenance-container">
         <div class="logo"></div>
         
-        <h1 id="title">CCBET系统维护中</h1>
-        <p class="subtitle" id="subtitle">我们正在对系统进行升级维护，以提供更好的服务体验</p>
+        <h1>CCBET系统维护中</h1>
+        <p class="subtitle">我们正在对系统进行升级维护，以提供更好的服务体验</p>
         
         <div class="maintenance-icon">🔧</div>
         
         <div class="message">
-            <div class="message-title" id="message-title">维护说明</div>
-            <p id="message-content">
+            <div class="message-title">维护说明</div>
+            <p>
                 为了给您提供更优质的服务，我们正在进行系统维护升级。在此期间，部分功能可能暂时无法使用，给您带来的不便，敬请谅解。
             </p>
         </div>
 
-        <ul class="info-list" id="info-list">
-            <li><strong id="info-status">维护状态：</strong><span id="status">进行中</span></li>
+        <ul class="info-list">
+            <li><strong>维护状态：</strong><span>进行中</span></li>
         </ul>
     </div>
-
-    <script>
-        const translations = {
-            zh: {
-                title: '系统维护中',
-                subtitle: '我们正在对系统进行升级维护，以提供更好的服务体验',
-                messageTitle: '维护说明',
-                messageContent: '为了给您提供更优质的服务，我们正在进行系统维护升级。在此期间，部分功能可能暂时无法使用，给您带来的不便，敬请谅解。',
-                infoStatus: '维护状态：',
-                status: '进行中'
-            },
-            en: {
-                title: 'System Maintenance',
-                subtitle: 'We are currently performing system upgrades to provide you with a better service experience',
-                messageTitle: 'Maintenance Notice',
-                messageContent: 'We are performing system maintenance and upgrades to provide you with better service. Some features may be temporarily unavailable during this time. We apologize for any inconvenience.',
-                infoStatus: 'Status:',
-                status: 'In Progress'
-            }
-        };
-
-        let currentLang = localStorage.getItem('maintenance-lang') || 'zh';
-
-        function switchLanguage(lang) {
-            currentLang = lang;
-            localStorage.setItem('maintenance-lang', lang);
-            updateContent();
-            updateButtons();
-        }
-
-        function updateContent() {
-            const t = translations[currentLang];
-            document.getElementById('title').textContent = t.title;
-            document.getElementById('subtitle').textContent = t.subtitle;
-            document.getElementById('message-title').textContent = t.messageTitle;
-            document.getElementById('message-content').textContent = t.messageContent;
-            document.getElementById('info-status').textContent = t.infoStatus;
-            document.getElementById('status').textContent = t.status;
-        }
-
-        function updateButtons() {
-            document.getElementById('btn-zh').classList.toggle('active', currentLang === 'zh');
-            document.getElementById('btn-en').classList.toggle('active', currentLang === 'en');
-        }
-
-        // 初始化
-        updateContent();
-        updateButtons();
-    </script>
 </body>
 </html>
 
